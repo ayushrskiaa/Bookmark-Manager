@@ -178,7 +178,7 @@ Navigate to `http://localhost:3000` in your browser.
 
 ## Time Spent
 
-Approximately **3 hours** spent on:
+Approximately **2.5 hours** spent on:
 - Backend API setup and routes (45 min)
 - Frontend components and styling (1.5 hours)
 - Integration and testing (45 min)
