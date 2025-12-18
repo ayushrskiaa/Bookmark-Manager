@@ -2,10 +2,9 @@ services:
   - type: web
     name: bookmark-manager
     env: node
-    buildCommand: npm run build
+    rootDir: ./
+    buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 10000
