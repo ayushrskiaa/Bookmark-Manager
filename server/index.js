@@ -7,8 +7,11 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type']
+}));
 app.use(express.json());
 
 // Path to data file
@@ -47,23 +50,18 @@ app.locals.writeData = writeData;
 app.use('/api/bookmarks', bookmarksRouter);
 app.use('/api/categories', categoriesRouter);
 
-// Serve static files from React build in production
-if (process.env.NODE_ENV === 'production') {
-  const clientBuildPath = path.join(__dirname, '../client/dist');
-  app.use(express.static(clientBuildPath));
-  
-  // Handle React routing, return all requests to React app
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(clientBuildPath, 'index.html'));
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Bookmark Manager API is running',
+    status: 'ok',
+    endpoints: {
+      bookmarks: '/api/bookmarks',
+      categories: '/api/categories'
+    }
   });
-} else {
-  // Basic route to test server in development
-  app.get('/', (req, res) => {
-    res.json({ message: 'Bookmark Manager API is running' });
-  });
-}
+});
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server is running on port ${PORT}`);
 });
