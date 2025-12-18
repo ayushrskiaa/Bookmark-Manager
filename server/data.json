@@ -1,0 +1,44 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Development",
+      "createdAt": "2025-12-18T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Design",
+      "createdAt": "2025-12-18T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "name": "News",
+      "createdAt": "2025-12-18T10:00:00Z"
+    },
+    {
+      "id": 4,
+      "name": "Plan",
+      "createdAt": "2025-12-18T15:35:43.012Z"
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": 1,
+      "title": "GitHub",
+      "url": "https://github.com",
+      "description": "Code hosting platform",
+      "categoryId": 1,
+      "createdAt": "2025-12-18T10:00:00Z",
+      "updatedAt": "2025-12-18T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Dribbble",
+      "url": "https://dribbble.com",
+      "description": "Design inspiration",
+      "categoryId": 2,
+      "createdAt": "2025-12-18T10:00:00Z",
+      "updatedAt": "2025-12-18T10:00:00Z"
+    }
+  ]
+}
