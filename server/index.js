@@ -47,10 +47,21 @@ app.locals.writeData = writeData;
 app.use('/api/bookmarks', bookmarksRouter);
 app.use('/api/categories', categoriesRouter);
 
-// Basic route to test server
-app.get('/', (req, res) => {
-  res.json({ message: 'Bookmark Manager API is running' });
-});
+// Serve static files from React build in production
+if (process.env.NODE_ENV === 'production') {
+  const clientBuildPath = path.join(__dirname, '../client/dist');
+  app.use(express.static(clientBuildPath));
+  
+  // Handle React routing, return all requests to React app
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(clientBuildPath, 'index.html'));
+  });
+} else {
+  // Basic route to test server in development
+  app.get('/', (req, res) => {
+    res.json({ message: 'Bookmark Manager API is running' });
+  });
+}
 
 // Start server
 app.listen(PORT, () => {

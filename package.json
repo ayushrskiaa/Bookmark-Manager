@@ -1,0 +1,21 @@
+{
+  "name": "bookmark-manager",
+  "version": "1.0.0",
+  "description": "Full-stack bookmark manager application",
+  "scripts": {
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "install-all": "npm run install-server && npm run install-client",
+    "build": "cd client && npm install && npm run build",
+    "postinstall": "cd server && npm install",
+    "start": "cd server && node index.js",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev"
+  },
+  "keywords": ["bookmark", "manager", "react", "express"],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
