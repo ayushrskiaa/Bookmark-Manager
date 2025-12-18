@@ -235,10 +235,6 @@ Given more time, I would add:
 ✅ RESTful API  
 ✅ Clean code structure  
 
-## Author
 
-Built as an intern assignment for Ayrin Digital.
-
----
 
 **Note:** This is a demonstration project built for learning purposes. Not intended for production use without additional security and scalability improvements.
